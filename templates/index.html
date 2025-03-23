@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mobile Price Prediction</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('logistic_regression') }}">Logistic Regression</a></li>
+                <li><a href="{{ url_for('naive_bayes') }}">Naive Bayes</a></li>
+                <li><a href="{{ url_for('knn') }}">KNN</a></li>
+                <li><a href="{{ url_for('decision_tree') }}">Decision Tree</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

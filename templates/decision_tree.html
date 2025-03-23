@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Tree</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Decision Tree</h1>
+        <form method="POST">
+            <!-- Binary Features (Checkboxes) -->
+            <label for="blue">Bluetooth:</label>
+            <input type="checkbox" id="blue" name="blue" value="1"><br>
+
+            <label for="dual_sim">Dual SIM:</label>
+            <input type="checkbox" id="dual_sim" name="dual_sim" value="1"><br>
+
+            <label for="four_g">4G:</label>
+            <input type="checkbox" id="four_g" name="four_g" value="1"><br>
+
+            <label for="three_g">3G:</label>
+            <input type="checkbox" id="three_g" name="three_g" value="1"><br>
+
+            <label for="wifi">Wi-Fi:</label>
+            <input type="checkbox" id="wifi" name="wifi" value="1"><br>
+
+            <!-- Numerical Features (Sliders) -->
+            <label for="battery_power">Battery Power:</label>
+            <input type="range" id="battery_power" name="battery_power" min="501" max="1998" value="1238"><br>
+
+            <label for="int_memory">Internal Memory (GB):</label>
+            <input type="range" id="int_memory" name="int_memory" min="2" max="64" value="32"><br>
+
+            <label for="px_width">Pixel Resolution Width:</label>
+            <input type="range" id="px_width" name="px_width" min="500" max="1998" value="1251"><br>
+
+            <label for="px_height">Pixel Resolution Height:</label>
+            <input type="range" id="px_height" name="px_height" min="0" max="1960" value="645"><br>
+
+            <label for="n_cores">Number of Cores:</label>
+            <input type="range" id="n_cores" name="n_cores" min="1" max="8" value="4"><br>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="prediction">
+            <h2>Predicted Price Range: {{ prediction }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
